@@ -2,15 +2,11 @@
 #include <SoftwareSerial.h>
 //#include <LiquidCrystal.h>
 
-//for  bluetooth - create an object called BTserial, with RX pin at 3 and TX pin at 2
-SoftwareSerial  BTserial(3,2); // RX | TX
-
-//decraration of all our variables
-
+//Variable decraration
 float  reads;
 int pin = A0;
 
-float vOut = 0 ;//voltage drop across 2 points
+float vOut = 0 ;//Potential difference across 2 points
 float  vIn = 5;
 float R1 = 1000;
 float R2 = 0;
@@ -96,15 +92,6 @@ void  loop() {
     setColor(  0, 255, 255 ) ;
   }
     }
-
-//send data to Ardutooth app on mobile phone  through bluetooth
-BTserial.print(C);
-BTserial.print(",");
-BTserial.print(TDS);
-BTserial.print(";");
-delay(500);
-}
-
 
 void  setColor(int red, int green, int blue)
 {
